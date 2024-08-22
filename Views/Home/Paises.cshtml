@@ -1,0 +1,9 @@
+@{
+    ViewData["Title"] = "Paises";
+}
+@foreach(Pais pais in ViewBag.ListaPaises){
+    <div>
+        <img src="@pais.Bandera">
+        <h2>@pais.Nombre</h2>
+    </div>
+}

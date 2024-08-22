@@ -18,7 +18,7 @@ static class BD{
     }
         public static Deporte VerInfoDeporte(int idDeporte){
             Deporte deporte=null;
-        string SQL ="SELECT* FROM Deportes where IdDeporte=@pIdDeporte";
+        string SQL ="SELECT * FROM Deportes where IdDeporte=@pIdDeporte";
         using(SqlConnection db = new SqlConnection(_connectionString)){
             deporte=db.QueryFirstOrDefault<Deporte>(SQL, new{pIdDeporte = idDeporte });
         }
@@ -26,17 +26,19 @@ static class BD{
     }
         public static Pais VerInfoPais(int idPais){
             Pais pais=null;
-        string SQL ="SELECT* FROM Paises where IdPais=@pIdPais";
+        string SQL ="SELECT * FROM Paises where IdPais=@pIdPais";
         using(SqlConnection db = new SqlConnection(_connectionString)){
             pais=db.QueryFirstOrDefault<Pais>(SQL, new{pIdPais = idPais });
         }
         return pais;
     }
-        public static void VerInfoDeportista(int idDeportista){
-        string SQL ="SELECT* FROM Deportistas where IdDeportista=@pIdDeportista";
+        public static Deportista VerInfoDeportista(int idDeportista){
+            Deportista deportista=null;
+        string SQL ="SELECT * FROM Deportistas where IdDeportista=@pIdDeportista";
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            db.Execute(SQL, new{pIdDeportista = idDeportista });
+            deportista=db.QueryFirstOrDefault<Deportista>(SQL, new{pIdDeportista = idDeportista });
         }
+        return deportista;
     }
     public static List<Pais> ListarPaises()
     {

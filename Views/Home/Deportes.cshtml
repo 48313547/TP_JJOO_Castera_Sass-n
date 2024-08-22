@@ -1,0 +1,9 @@
+@{
+    ViewData["Title"] = "Deportes";
+}
+@foreach(Deporte deporte in ViewBag.ListaDeportes){
+    <div>
+        <img src="@deporte.Foto">
+        <h2>@deporte.Nombre</h2>
+    </div>
+}
