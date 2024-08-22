@@ -63,7 +63,7 @@ static class BD{
         List<Deportista> ListadoDeportistasxDeporte=new List<Deportista>();
         using(SqlConnection db=new SqlConnection(_connectionString)){
             string SQL="Select * From Deportistas where IdDeporte=@pIdDeporte";
-            ListadoDeportistasxDeporte=db.Query<Deportista>(SQL).ToList();
+            ListadoDeportistasxDeporte=db.Query<Deportista>(SQL, new{pIdDeporte=idDeporte}).ToList();
         }
         return ListadoDeportistasxDeporte;
     }

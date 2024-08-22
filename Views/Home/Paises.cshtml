@@ -3,7 +3,7 @@
 }
 @foreach(Pais pais in ViewBag.ListaPaises){
     <div>
-        <img src="@pais.Bandera">
+        <a href='@Url.Action("VerDetallePais", "Home", new{idPais=pais.IdPais})'><img src="@pais.Bandera"></a>
         <h2>@pais.Nombre</h2>
     </div>
 }

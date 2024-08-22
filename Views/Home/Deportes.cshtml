@@ -3,7 +3,7 @@
 }
 @foreach(Deporte deporte in ViewBag.ListaDeportes){
     <div>
-        <img src="@deporte.Foto">
+        <a href='@Url.Action("VerDetalleDeporte", "Home", new{idDeporte=deporte.IdDeporte})'><img src="@deporte.Foto"></a>
         <h2>@deporte.Nombre</h2>
     </div>
 }
