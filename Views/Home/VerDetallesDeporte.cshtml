@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Deportes"
+}
+<div class="header-pages">
+    <div class="header-overlay"></div>
+</div>
+<div class="main">
+    <h1>Deportes</h1>
+    <div class="flexbox">
+        @foreach(Deporte deporte in ViewBag.ListaDeportes){
+            <a href='@Url.Action("VerDetalleDeporte", "Home", new{idDeporte =deporte.IdDeporte})'>
+                <div class="item card">
+                    <img >
+                    <h2>@deporte.Nombre</h2>
+            
+        }
