@@ -1,1 +1,7 @@
-<h1>@ViewBag.DeporteElegido.Nombre</h1>
+<h1>@ViewBag.DetallePais.Nombre</h1>
+@foreach(Deportista depo in ViewBag.ListaDeportistasxPais){
+    <div class="dep">
+        <h2>@depo.Nombre @depo.Apellido</h2>
+        <a href='@Url.Action("VerDetalleDeportista", "Home", new{idDeportista=depo.IdDeportista})'><img src="@depo.Foto"></a>
+    </div>
+}

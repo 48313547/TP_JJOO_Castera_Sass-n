@@ -2,8 +2,8 @@
     ViewData["Title"] = "Paises";
 }
 @foreach(Pais pais in ViewBag.ListaPaises){
-    <div>
-        <a href='@Url.Action("VerDetallePais", "Home", new{idPais=pais.IdPais})'><img src="@pais.Bandera"></a>
+    <div class="dep">
         <h2>@pais.Nombre</h2>
+        <a href='@Url.Action("VerDetallePais", "Home", new{idPais=pais.IdPais})'><img src="@pais.Bandera"></a>
     </div>
 }

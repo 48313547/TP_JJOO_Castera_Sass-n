@@ -2,7 +2,7 @@ using System.Data.SqlClient;
 using Dapper;
 namespace TP_JJOO_Castera_Sass_n.Models;
 static class BD{
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-35; DataBase=JJOO; Trusted_Connection=True;";
+        private static string _connectionString = @"Server=localhost; DataBase=JJOO; Trusted_Connection=True;";
     
         public static void AgregarDeportista(Deportista dep){
         string SQL ="Insert Into Deportistas(IdDeportista, Nombre, Apellido, FechaNacimiento, IdPais, IdDeporte) Values (@pIdDeportista, @pNombre, @pApellido, @pFechaNacimiento, @pIdPais, @pIdDeporte)";
@@ -71,7 +71,7 @@ static class BD{
         List<Deportista> ListadoDeportistasxPais=new List<Deportista>();
         using(SqlConnection db=new SqlConnection(_connectionString)){
             string SQL="Select * From Deportistas where IdPais=@pIdPais";
-            ListadoDeportistasxPais=db.Query<Deportista>(SQL).ToList();
+            ListadoDeportistasxPais=db.Query<Deportista>(SQL, new{pIdPais=idPais}).ToList();
         }
         return ListadoDeportistasxPais;
     }

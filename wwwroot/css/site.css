@@ -42,5 +42,16 @@ nav ul li{
 a{
   text-decoration: none;
   color: #000;
+}
 
+.dep{
+  display: inline-block;
+}
+.dep img{
+  height: 500px; 
+  width: auto;
+}
+img{
+  height: 800px;
+  width: 1900px;
 }

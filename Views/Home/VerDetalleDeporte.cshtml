@@ -1,4 +1,11 @@
 @{
     ViewData["Title"] = "Deportes";
+
 }
 <h1>@ViewBag.DeporteElegido.Nombre</h1>
+@foreach(Deportista depo in ViewBag.ListaDeportistasxDeporte){
+    <div class="dep">
+        <h2>@depo.Nombre @depo.Apellido</h2>
+        <a href='@Url.Action("VerDetalleDeportista", "Home", new{idDeportista=depo.IdDeportista})'><img src="@depo.Foto"></a>
+    </div>
+}
